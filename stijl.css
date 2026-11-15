@@ -1,5 +1,5 @@
-@font-face{font-family:"Caveat";font-weight:600;font-style:normal;font-display:swap;src:url("fonts/caveat-latin-600-normal.woff2") format("woff2")}
-@font-face{font-family:"Caveat";font-weight:700;font-style:normal;font-display:swap;src:url("fonts/caveat-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:"Caveat";font-weight:600;font-style:normal;font-display:swap;src:url("caveat-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:"Caveat";font-weight:700;font-style:normal;font-display:swap;src:url("caveat-latin-700-normal.woff2") format("woff2")}
 :root{--groen:#51680F;--lichtgroen:#A0C526;--zachtgroen:#EEF4D6;--achtergrond:#F6F7F2;--wit:#FFFFFF;--lijn:#E4E7DA;--inkt:#2B2E24;--grijs:#5C6150;--warm:#F7EBDD;--warmtekst:#6B2E0E}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
