@@ -99,3 +99,8 @@ h2{font-size:clamp(30px,3.8vw,38px);line-height:1.15;font-weight:700;letter-spac
 
 .widgetbeeld{flex:0 1 380px;min-width:240px;margin:0 auto}
 .widgetbeeld img{display:block;width:100%;height:auto;border-radius:8.6%/18.3%;box-shadow:0 0 0 1px var(--lijn),0 14px 36px rgba(43,46,36,.10)}
+
+.voet .ookvan{flex:1 0 100%;display:flex;flex-wrap:wrap;align-items:center;gap:8px 28px;padding-top:24px;border-top:1px solid var(--lijn)}
+.voet .ookvan .label{color:var(--grijs)}
+.voet .ookvan a{display:inline-flex;align-items:center;gap:10px;padding:6px 0;font-weight:500;text-decoration:none}
+.voet .ookvan img{width:28px;height:28px;border-radius:7px}
