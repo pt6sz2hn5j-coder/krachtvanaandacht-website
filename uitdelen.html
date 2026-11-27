@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Poster en kaartjes om uit te delen, de Kracht van Aandacht</title>
+<meta name="description" content="Een poster voor de wachtkamer en kaartjes om aan cliënten mee te geven, met een QR-code naar de app de Kracht van Aandacht.">
+<link rel="canonical" href="https://krachtvanaandachtapp.nl/uitdelen.html">
+<meta property="og:title" content="Poster en kaartjes om uit te delen, de Kracht van Aandacht">
+<meta property="og:description" content="Een poster voor de wachtkamer en kaartjes om aan cliënten mee te geven, met een QR-code naar de app de Kracht van Aandacht.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://krachtvanaandachtapp.nl/uitdelen.html">
+<meta property="og:image" content="https://krachtvanaandachtapp.nl/delen.png">
+<meta property="og:locale" content="nl_NL">
+<link rel="icon" href="icoon-96.png" type="image/png">
+<link rel="apple-touch-icon" href="icoon-180.png">
+<link rel="stylesheet" href="stijl.css">
+<style>
+.uitleg-blok{display:flex;flex-direction:column;gap:16px;padding-bottom:24px}
+.naamveld{display:flex;flex-direction:column;gap:8px;margin-top:8px;max-width:460px}
+.naamveld label{font-weight:600}
+.naamveld input{font:inherit;padding:12px 16px;border:1px solid var(--lijn);border-radius:12px;background:var(--wit);color:var(--inkt)}
+.naamveld .klein{margin:0}
+.keuze{display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start;padding-top:24px;padding-bottom:56px}
+.keuze figure{margin:0;display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.keuze figcaption{display:flex;flex-direction:column;gap:6px;max-width:320px}
+.keuze figcaption strong{font-size:20px}
+.keuze button{font:inherit;cursor:pointer;border:0;margin-top:6px}
+.voorbeeld{border:1px solid var(--lijn);border-radius:6px;overflow:hidden;box-shadow:0 12px 32px rgba(43,46,36,.12);background:var(--wit)}
+.voorbeeld.poster{width:calc(210mm*.34);height:calc(297mm*.34)}
+.voorbeeld.kaartjes{width:calc(210mm*.34);height:calc(297mm*.34)}
+.voorbeeld .vel{transform:scale(.34);transform-origin:0 0}
+.vel{width:210mm;height:297mm;background:#fff;color:var(--inkt);position:relative;overflow:hidden;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.qr{display:block;width:100%;height:auto}
+.merkje{display:flex;align-items:center;justify-content:center;gap:4mm}
+.merkje img{width:16mm;height:16mm;border-radius:4mm}
+.merkje span{font-family:"Caveat","Bradley Hand",cursive;font-weight:700;font-size:13mm;line-height:1}
+.aanbev{font-size:5mm;color:var(--grijs);min-height:7mm}
+.aanbev[hidden]{display:block;visibility:hidden}
+.poster-vel{display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:22mm 20mm 20mm;text-align:center}
+.poster-vel .vraag{font-family:"Caveat","Bradley Hand",cursive;font-weight:700;font-size:21mm;line-height:1;color:var(--groen);max-width:180mm}
+.poster-vel .codevlak{background:var(--zachtgroen);border-radius:10mm;padding:12mm;width:118mm}
+.poster-vel .codevlak .qrwit{background:#fff;border-radius:5mm;padding:3mm}
+.poster-vel .zin{font-size:7.2mm;line-height:1.3;max-width:150mm;font-weight:500}
+.poster-vel .adres{font-size:5.4mm;color:var(--grijs)}
+.poster-vel .onder{display:flex;flex-direction:column;align-items:center;gap:3mm}
+.kaartjes-vel{display:grid;grid-template-columns:105mm 105mm;grid-template-rows:148.5mm 148.5mm}
+.kaart-a6{width:105mm;height:148.5mm;padding:9mm 9mm 7mm;display:flex;flex-direction:column;align-items:center;justify-content:space-between;text-align:center;outline:.25mm dashed #b9bdae;outline-offset:-.125mm}
+.kaart-a6 .merkje img{width:10mm;height:10mm;border-radius:2.5mm}
+.kaart-a6 .merkje span{font-size:8.5mm}
+.kaart-a6 .vraag{font-family:"Caveat","Bradley Hand",cursive;font-weight:700;font-size:10.5mm;line-height:1;color:var(--groen)}
+.kaart-a6 .codevlak{background:var(--zachtgroen);border-radius:5mm;padding:5mm;width:62mm}
+.kaart-a6 .codevlak .qrwit{background:#fff;border-radius:3mm;padding:2mm}
+.kaart-a6 .zin{font-size:3.7mm;line-height:1.3;font-weight:500}
+.kaart-a6 .adres{font-size:3.5mm;color:var(--grijs)}
+.kaart-a6 .aanbev{font-size:3.4mm;min-height:4.5mm}
+.kaart-a6 .midden{display:flex;flex-direction:column;align-items:center;gap:3mm}
+.kaart-a6 .onder{display:flex;flex-direction:column;align-items:center;gap:1mm}
+.qrbron{position:absolute;width:0;height:0;overflow:hidden}
+@media (max-width:640px){.keuze{gap:28px}}
+@media print{
+@page{size:A4;margin:0}
+html,body{background:#fff}
+body>*:not(main){display:none!important}
+main>*:not(.afdruk){display:none!important}
+.afdruk .voorbeeld{border:0;border-radius:0;box-shadow:none;width:210mm;height:297mm;overflow:visible}
+.afdruk .voorbeeld .vel{transform:none}
+.afdruk .keuze{display:block;padding:0}
+.afdruk figure{display:block}
+.afdruk figcaption{display:none}
+body[data-print="poster"] .afdruk figure.k2{display:none}
+body[data-print="kaartjes"] .afdruk figure.k1{display:none}
+}
+</style>
+</head>
+<body data-print="poster">
+<a class="overslaan" href="#inhoud">Naar de inhoud</a>
+<header class="kader kop">
+<a class="merk" href="index.html"><img src="icoon-96.png" alt="" width="48" height="48"><span class="schrift">de Kracht van Aandacht</span></a>
+<nav class="menu" aria-label="Hoofdmenu"><a href="behandelaren.html" aria-current="page">Voor behandelaren</a><a href="over-mij.html">Over mij</a><a href="support.html">Hulp bij de app</a><a href="steun.html">Steun de app</a></nav>
+</header>
+<main id="inhoud">
+
+<div class="kader smal pagina uitleg-blok">
+<h1>Uitdelen aan cliënten</h1>
+<p class="inleiding">Een poster voor in de wachtkamer en kaartjes om mee te geven. De QR-code op beide verwijst naar deze website, waar de link naar de app staat.</p>
+<p>Wil je ze persoonlijk maken? Vul hieronder je naam of praktijknaam in. Die komt dan onderaan te staan als "Aanbevolen door". Laat je het veld leeg, dan blijft die regel weg. Er wordt niets opgeslagen en niets verstuurd.</p>
+<div class="naamveld">
+<label for="naam">Je naam of praktijknaam (niet verplicht)</label>
+<input id="naam" type="text" maxlength="60" autocomplete="off" placeholder="Bijvoorbeeld: Praktijk De Tuin">
+<p class="klein">Tip: kies in het printvenster "Opslaan als pdf" als je het bestand wilt bewaren of laten drukken.</p>
+</div>
+</div>
+
+<div class="kader afdruk">
+<div class="keuze">
+
+<figure class="k1">
+<div class="voorbeeld poster"><div class="vel poster-vel" role="img" aria-label="Voorbeeld van de poster">
+<div class="merkje"><img src="icoon-180.png" alt=""><span>de Kracht van Aandacht</span></div>
+<div class="vraag">Waar wil je straks aandacht aan geven?</div>
+<div class="onder">
+<div class="codevlak"><div class="qrwit"><svg class="qr" viewBox="0 0 37 37" aria-hidden="true"><use href="#qrcode"/></svg></div></div>
+<div class="zin">Een gratis app om je therapie de aandacht te geven die het verdient.</div>
+<div class="adres">Scan de code of ga naar krachtvanaandachtapp.nl</div>
+<div class="aanbev" data-aanbev hidden></div>
+</div>
+</div></div>
+<figcaption><strong>Poster voor de wachtkamer</strong><span class="klein">A4, staand. Eén vraag, één code.</span><button type="button" class="knop" data-print-kies="poster">Print de poster</button></figcaption>
+</figure>
+
+<figure class="k2">
+<div class="voorbeeld kaartjes"><div class="vel kaartjes-vel" role="img" aria-label="Voorbeeld van een A4 met vier kaartjes">
+<div class="kaart-a6">
+<div class="merkje"><img src="icoon-180.png" alt=""><span>de Kracht van Aandacht</span></div>
+<div class="midden">
+<div class="vraag">Waar wil je straks aandacht aan geven?</div>
+<div class="codevlak"><div class="qrwit"><svg class="qr" viewBox="0 0 37 37" aria-hidden="true"><use href="#qrcode"/></svg></div></div>
+</div>
+<div class="onder">
+<div class="zin">Een gratis app om je therapie de aandacht te geven die het verdient.</div>
+<div class="adres">krachtvanaandachtapp.nl</div>
+<div class="aanbev" data-aanbev hidden></div>
+</div>
+</div>
+<div class="kaart-a6">
+<div class="merkje"><img src="icoon-180.png" alt=""><span>de Kracht van Aandacht</span></div>
+<div class="midden">
+<div class="vraag">Waar wil je straks aandacht aan geven?</div>
+<div class="codevlak"><div class="qrwit"><svg class="qr" viewBox="0 0 37 37" aria-hidden="true"><use href="#qrcode"/></svg></div></div>
+</div>
+<div class="onder">
+<div class="zin">Een gratis app om je therapie de aandacht te geven die het verdient.</div>
+<div class="adres">krachtvanaandachtapp.nl</div>
+<div class="aanbev" data-aanbev hidden></div>
+</div>
+</div>
+<div class="kaart-a6">
+<div class="merkje"><img src="icoon-180.png" alt=""><span>de Kracht van Aandacht</span></div>
+<div class="midden">
+<div class="vraag">Waar wil je straks aandacht aan geven?</div>
+<div class="codevlak"><div class="qrwit"><svg class="qr" viewBox="0 0 37 37" aria-hidden="true"><use href="#qrcode"/></svg></div></div>
+</div>
+<div class="onder">
+<div class="zin">Een gratis app om je therapie de aandacht te geven die het verdient.</div>
+<div class="adres">krachtvanaandachtapp.nl</div>
+<div class="aanbev" data-aanbev hidden></div>
+</div>
+</div>
+<div class="kaart-a6">
+<div class="merkje"><img src="icoon-180.png" alt=""><span>de Kracht van Aandacht</span></div>
+<div class="midden">
+<div class="vraag">Waar wil je straks aandacht aan geven?</div>
+<div class="codevlak"><div class="qrwit"><svg class="qr" viewBox="0 0 37 37" aria-hidden="true"><use href="#qrcode"/></svg></div></div>
+</div>
+<div class="onder">
+<div class="zin">Een gratis app om je therapie de aandacht te geven die het verdient.</div>
+<div class="adres">krachtvanaandachtapp.nl</div>
+<div class="aanbev" data-aanbev hidden></div>
+</div>
+</div>
+</div></div>
+<figcaption><strong>Kaartjes om mee te geven</strong><span class="klein">Vier kaartjes op een A4. Knip langs de stippellijn.</span><button type="button" class="knop" data-print-kies="kaartjes">Print de kaartjes</button></figcaption>
+</figure>
+
+</div>
+</div>
+
+<div class="kader smal pagina">
+<p class="klein">De poster en de kaartjes doen geen uitspraken over effect. Ze nodigen alleen uit om de app te bekijken.</p>
+</div>
+
+</main>
+<footer class="voet">
+<div class="kader">
+<div class="wie"><span class="schrift">de Kracht van Aandacht</span><span>Gemaakt door Sjoerd te Dorsthorst, psychotherapeut en GZ-psycholoog</span></div>
+<nav class="menu" aria-label="Menu onderaan"><a href="behandelaren.html">Voor behandelaren</a><a href="over-mij.html">Over mij</a><a href="support.html">Hulp bij de app</a><a href="steun.html">Steun de app</a><a href="privacy.html">Privacy</a></nav>
+  <div class="ookvan"><span class="label">Ook van mij</span><a href="https://mijnsupervisie.nl"><img src="https://supervisiedossier.nl/icon-mijnsupervisie.png" alt="" width="28" height="28">Mijn Supervisie</a><a href="https://supervisiedossier.nl"><img src="https://supervisiedossier.nl/icon-supervisiedossier.png" alt="" width="28" height="28">Supervisiedossier</a></div>
+</div>
+</footer>
+
+<svg class="qrbron" aria-hidden="true" focusable="false"><symbol id="qrcode" viewBox="0 0 37 37"><rect width="37" height="37" fill="#fff"/><g transform="translate(4 4)"><path stroke="#2B2E24" d="M0 0.5h7m2 0h3m3 0h3m4 0h7m-29 1h1m5 0h1m1 0h2m3 0h1m1 0h1m2 0h3m1 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m2 0h1m5 0h1m3 0h1m2 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h3m1 0h4m1 0h1m2 0h1m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h2m2 0h2m1 0h5m2 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m2 0h1m7 0h2m3 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-21 1h2m8 0h1m1 0h1m-20 1h1m1 0h4m1 0h4m4 0h7m1 0h2m1 0h1m-26 1h1m2 0h1m1 0h3m2 0h1m2 0h2m1 0h2m3 0h2m1 0h2m-28 1h3m1 0h1m1 0h2m1 0h4m5 0h1m2 0h2m1 0h3m-27 1h1m1 0h2m3 0h5m1 0h1m1 0h1m1 0h1m5 0h3m2 0h1m-28 1h2m2 0h5m1 0h1m3 0h2m2 0h1m1 0h2m2 0h1m1 0h1m-28 1h1m3 0h1m3 0h1m2 0h1m4 0h3m3 0h1m1 0h1m1 0h1m1 0h1m-29 1h2m2 0h1m1 0h1m1 0h1m1 0h3m1 0h2m1 0h1m1 0h5m1 0h1m2 0h1m-28 1h2m1 0h1m4 0h1m1 0h1m6 0h4m2 0h3m-26 1h1m2 0h1m1 0h1m2 0h3m1 0h1m5 0h2m2 0h1m1 0h1m2 0h1m-29 1h2m1 0h1m1 0h1m2 0h1m1 0h2m1 0h2m1 0h1m1 0h3m3 0h1m-25 1h7m3 0h1m3 0h7m2 0h2m1 0h1m1 0h1m-29 1h2m2 0h1m2 0h3m3 0h2m3 0h2m1 0h4m1 0h3m-29 1h5m1 0h1m2 0h4m2 0h3m1 0h8m-19 1h4m3 0h1m1 0h1m2 0h1m3 0h3m-27 1h7m2 0h1m3 0h3m3 0h2m1 0h1m1 0h1m1 0h1m-27 1h1m5 0h1m1 0h1m1 0h1m2 0h1m1 0h1m1 0h4m3 0h2m1 0h2m-29 1h1m1 0h3m1 0h1m1 0h2m2 0h1m1 0h3m2 0h6m2 0h2m-29 1h1m1 0h3m1 0h1m1 0h2m8 0h1m4 0h1m3 0h1m-28 1h1m1 0h3m1 0h1m3 0h1m2 0h1m1 0h2m3 0h2m1 0h6m-29 1h1m5 0h1m1 0h1m2 0h2m1 0h1m3 0h2m4 0h3m1 0h1m-29 1h7m4 0h2m3 0h1m2 0h3m1 0h2"/></g></symbol></svg>
+
+<script>
+(function(){
+var inv=document.getElementById('naam');
+function zet(){
+var v=inv.value.trim();
+document.querySelectorAll('[data-aanbev]').forEach(function(e){
+if(v){e.textContent='Aanbevolen door '+v;e.hidden=false}else{e.textContent='';e.hidden=true}
+});
+}
+inv.addEventListener('input',zet);
+document.querySelectorAll('[data-print-kies]').forEach(function(b){
+b.addEventListener('click',function(){
+document.body.setAttribute('data-print',b.getAttribute('data-print-kies'));
+window.print();
+});
+});
+zet();
+})();
+</script>
+</body>
+</html>
