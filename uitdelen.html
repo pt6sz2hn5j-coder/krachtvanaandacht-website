@@ -21,11 +21,12 @@
 .naamveld label{font-weight:600}
 .naamveld input{font:inherit;padding:12px 16px;border:1px solid var(--lijn);border-radius:12px;background:var(--wit);color:var(--inkt)}
 .naamveld .klein{margin:0}
-.keuze{display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start;padding-top:24px;padding-bottom:56px}
-.keuze figure{margin:0;display:flex;flex-direction:column;gap:14px;align-items:flex-start}
-.keuze figcaption{display:flex;flex-direction:column;gap:6px;max-width:320px}
+.keuze{display:flex;flex-wrap:wrap;gap:40px;align-items:stretch;padding-top:24px;padding-bottom:56px}
+.keuze figure{margin:0;display:flex;flex-direction:column;gap:14px;align-items:stretch;width:calc(210mm*.34)}
+.keuze figcaption{display:flex;flex-direction:column;gap:6px;flex:1}
 .keuze figcaption strong{font-size:20px}
-.keuze button{font:inherit;cursor:pointer;border:0;margin-top:6px}
+.keuze button{font:inherit;cursor:pointer;border:0;margin-top:auto;width:100%}
+.keuze figcaption .klein{padding-bottom:10px}
 .voorbeeld{border:1px solid var(--lijn);border-radius:6px;overflow:hidden;box-shadow:0 12px 32px rgba(43,46,36,.12);background:var(--wit)}
 .voorbeeld.poster{width:calc(210mm*.34);height:calc(297mm*.34)}
 .voorbeeld.kaartjes{width:calc(210mm*.34);height:calc(297mm*.34)}
@@ -66,7 +67,7 @@ main>*:not(.afdruk){display:none!important}
 .afdruk .voorbeeld{border:0;border-radius:0;box-shadow:none;width:210mm;height:297mm;overflow:visible}
 .afdruk .voorbeeld .vel{transform:none}
 .afdruk .keuze{display:block;padding:0}
-.afdruk figure{display:block}
+.afdruk figure{display:block;width:auto}
 .afdruk figcaption{display:none}
 body[data-print="poster"] .afdruk figure.k2{display:none}
 body[data-print="kaartjes"] .afdruk figure.k1{display:none}
@@ -166,9 +167,7 @@ body[data-print="kaartjes"] .afdruk figure.k1{display:none}
 </div>
 </div>
 
-<div class="kader smal pagina">
-<p class="klein">De poster en de kaartjes doen geen uitspraken over effect. Ze nodigen alleen uit om de app te bekijken.</p>
-</div>
+
 
 </main>
 <footer class="voet">
